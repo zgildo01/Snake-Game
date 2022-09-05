@@ -66,7 +66,18 @@ function renderFood(){
   context.fillStyle = foodColor;
   context.fillRect(foodX, foodY, unitSize, unitSize);
 };
-function moveSnake(){};
+function moveSnake(){
+  const head = {x: snake[0].x + xVelocity,
+                y: snake[0].y + yVelocity};
+  snake.unshift(head);
+  if(snake[0].x == foodX && snake[0].y == foodY) {
+    score += 1;
+    scoreText.textContent = score;
+    createFood();
+  } else {
+    snake.pop();
+  }
+};
 function renderSnake(){
   context.fillStyle = snakeColor;
   context.strokeStyle = snakeBorder;
