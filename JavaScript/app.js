@@ -32,7 +32,7 @@ gameStart();
 function gameStart(){
   running = true;
   scoreText.textContent = score;
-  renderFood();
+  createFood();
   renderFood();
   nextTick();
 };
@@ -54,7 +54,7 @@ function clearBoard(){
   context.fillStyle = boardBackground;
   context.fillRect(0, 0, gameWidth, gameHeight);
 };
-function renderFood(){
+function createFood(){
   function randomFood(min, max) {
     const randNum = Math.round((Math.random() * (max - min) + min) / unitSize) * unitSize;
     return randNum;
