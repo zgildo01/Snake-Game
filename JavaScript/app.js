@@ -43,7 +43,8 @@ function createFood(){
   foodY = randomFood(0, gameWidth - unitSize);
 };
 function renderFood(){
-  
+  context.fillStyle = foodColor;
+  context.fillRect(foodX, foodY, unitSize, unitSize);
 };
 function moveSnake(){};
 function drawSnake(){};
