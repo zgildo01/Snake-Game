@@ -36,7 +36,20 @@ function gameStart(){
   renderFood();
   nextTick();
 };
-function nextTick(){};
+function nextTick(){
+  if (running) {
+    setTimeout(() => {
+      clearBoard();
+      renderFood();
+      moveSnake();
+      drawSnake();
+      checkGameOver();
+      nextTick();
+    }, 50)
+  } else {
+    renderGameOver();
+  }
+};
 function clearBoard(){};
 function createFood(){
   function randomFood(min, max) {
