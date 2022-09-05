@@ -32,7 +32,7 @@ gameStart();
 function gameStart(){
   running = true;
   scoreText.textContent = score;
-  createFood();
+  renderFood();
   renderFood();
   nextTick();
 };
@@ -54,7 +54,7 @@ function clearBoard(){
   context.fillStyle = boardBackground;
   context.fillRect(0, 0, gameWidth, gameHeight);
 };
-function createFood(){
+function renderFood(){
   function randomFood(min, max) {
     const randNum = Math.round((Math.random() * (max - min) + min) / unitSize) * unitSize;
     return randNum;
@@ -73,7 +73,7 @@ function moveSnake(){
   if(snake[0].x == foodX && snake[0].y == foodY) {
     score += 1;
     scoreText.textContent = score;
-    createFood();
+    renderFood();
   } else {
     snake.pop();
   }
