@@ -42,7 +42,7 @@ function nextTick(){
       clearBoard();
       renderFood();
       moveSnake();
-      drawSnake();
+      renderSnake();
       checkGameOver();
       nextTick();
     }, 50)
@@ -67,7 +67,7 @@ function renderFood(){
   context.fillRect(foodX, foodY, unitSize, unitSize);
 };
 function moveSnake(){};
-function drawSnake(){
+function renderSnake(){
   context.fillStyle = snakeColor;
   context.strokeStyle = snakeBorder;
   snake.forEach(snakePart => {
