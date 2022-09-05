@@ -28,15 +28,26 @@ resetBtn.addEventListener('click', resetGame);
 window.addEventListener('keydown', changeDirection);
 
 gameStart();
+createFood();
+renderFood();
 
 function gameStart(){};
 function nextTick(){};
 function clearBoard(){};
-function createFood(){};
-function renderFood(){};
+function createFood(){
+  function randomFood(min, max) {
+    const randNum = Math.round((Math.random() * (max - min) + min) / unitSize) * unitSize;
+    return randNum;
+  };
+  foodX = randomFood(0, gameWidth - unitSize);
+  foodY = randomFood(0, gameWidth - unitSize);
+};
+function renderFood(){
+  
+};
 function moveSnake(){};
 function drawSnake(){};
 function changeDirection(){};
 function checkGameOver(){};
 function renderGameOver(){};
-function resetGame();
+function resetGame(){};
