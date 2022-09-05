@@ -86,7 +86,40 @@ function renderSnake(){
     context.strokeRect(snakePart.x, snakePart.y, unitSize, unitSize);
   })
 };
-function changeDirection(){};
-function checkGameOver(){};
+function changeDirection(evt){
+  const keyPressed = evt.keyCode;
+  const LEFT = 37;
+  const UP = 38;
+  const RIGHT = 39;
+  const DOWN = 40;
+  
+  const goingUp = (yVelocity == -unitSize);
+  const goingDown = (yVelocity == unitSize);
+  const goingRight = (xVelocity == unitSize);
+  const goingLeft = (xVelocity == -unitSize);
+
+  switch(true) {
+    case(keyPressed == LEFT && !goingRight):
+      xVelocity = -unitSize;
+      yVelocity = 0;
+      break;
+    case(keyPressed == UP && !goingDown):
+      xVelocity = 0;
+      yVelocity = -unitSize;
+      break;
+    case(keyPressed == RIGHT && !goingLeft):
+      xVelocity = unitSize;
+      yVelocity = 0;
+      break;
+    case(keyPressed == DOWN && !goingUp):
+      xVelocity = 0;
+      yVelocity = unitSize;
+      break;
+
+  }
+};
+function checkGameOver(){
+  
+};
 function renderGameOver(){};
 function resetGame(){};
