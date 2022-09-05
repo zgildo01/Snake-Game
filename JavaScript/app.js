@@ -26,3 +26,17 @@ let snake = [
 
 resetBtn.addEventListener('click', resetGame);
 window.addEventListener('keydown', changeDirection);
+
+gameStart();
+
+function gameStart(){};
+function nextTick(){};
+function clearBoard(){};
+function createFood(){};
+function renderFood(){};
+function moveSnake(){};
+function drawSnake(){};
+function changeDirection(){};
+function checkGameOver(){};
+function renderGameOver(){};
+function resetGame();
